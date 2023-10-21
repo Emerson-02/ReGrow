@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public void Regar()
     {
         // diminui na metade o ciclo de tempo
-        gameController.DecreaseCycleTime(gameController.cycleTime / 2);
+        gameController.IncreaseCycleTime();
     }
 
     //função para colher uma planta, recebe um objeto do tipo planta
@@ -21,6 +21,6 @@ public class PlayerController : MonoBehaviour
         // aumenta a poluição
         gameController.IncreasePollution(plant.pollution);
         // destroi a planta
-        Destroy(plant.gameObject);
+
     }
 }

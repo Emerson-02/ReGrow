@@ -5,5 +5,6 @@ using UnityEngine;
 public class Planta
 {
     public int vida;
+    public int pollution;
     
 }

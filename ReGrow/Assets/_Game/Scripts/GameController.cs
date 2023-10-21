@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     public float pollution = 100;
     public float minPollution = 0;
-    public int cycleTime = 60;
+    public float cycleTime = 0;
 
 
     // função para diminuir a poluição
@@ -26,19 +26,27 @@ public class GameController : MonoBehaviour
     }
 
     // função para diminuir o ciclo de tempo
-    public void DecreaseCycleTime(int amount)
+    public void IncreaseCycleTime()
     {
-        cycleTime -= amount;
-        if (cycleTime < 0)
+        //cycleTime -= amount;
+        
+        cycleTime += Time.deltaTime;
+
+        if (cycleTime > 60)
         {
-            cycleTime = 60;
+            // troca o ciclo
+
+
+            cycleTime = 0;
         }
     
     }
 
     
 
-    private void FixedUpdate() {
+    private void Update() 
+    {
+        IncreaseCycleTime();
     }
 
 
