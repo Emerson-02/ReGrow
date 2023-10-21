@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public float minPollution = 0;
     public float cycleTime = 0;
     public float timer = 0;
+    public bool isTimerRunning = false;
 
 
     // função para diminuir a poluição
@@ -45,7 +46,22 @@ public class GameController : MonoBehaviour
 
     void TimerGeral()
     {
-        timer += Time.deltaTime;
+        if(isRunning)
+        {
+            timer += Time.deltaTime;
+        }
+    }
+
+    void ChangeTimer()
+    {
+        if(isTimerRunning == true)
+        {
+            isTimerRunning = false;
+        }
+        else if(isTimerRunning == false)
+        {
+            isTimerRunning = true;
+        }
     }
 
     
